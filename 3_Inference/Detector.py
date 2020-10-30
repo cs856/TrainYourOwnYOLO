@@ -295,7 +295,9 @@ if __name__ == "__main__":
                 FLAGS.output,
                 os.path.basename(vid_path).replace(".", FLAGS.postfix + "."),
             )
-            detect_video(yolo, vid_path, output_path=output_path)
+            #detect_video(yolo, vid_path, output_path=output_path)
+            out_df_video = detect_video(yolo, vid_path, output_path=output_path)
+            
 
         end = timer()
         print(
@@ -303,6 +305,9 @@ if __name__ == "__main__":
                 len(input_video_paths), end - start
             )
         )
+        out_df_video.to_csv(FLAGS.box, index=False)
+
+        
     # for Webcam
     if webcam_active:
         start = timer()
