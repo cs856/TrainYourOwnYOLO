@@ -19,6 +19,7 @@ from keras.utils import multi_gpu_model
 import tensorflow.compat.v1 as tf
 import tensorflow.python.keras.backend as K
 
+import pandas as pd
 tf.disable_eager_execution()
 
 
