@@ -266,7 +266,7 @@ def detect_video(yolo, video_path, output_path=""):
     curr_fps = 0
     fps = "FPS: ??"
     prev_time = timer()
-    
+
     frame_no = 0
 
     while vid.isOpened():
@@ -277,7 +277,7 @@ def detect_video(yolo, video_path, output_path=""):
         frame = frame[:, :, ::-1]
         image = Image.fromarray(frame)
         out_pred, image = yolo.detect_image(image, show_stats=False)
-
+        frame_no += 1
 
         #create csv file for the video
         for single_prediction in out_pred:
