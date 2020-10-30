@@ -13,5 +13,5 @@
 import gdown
 
 url = 'https://drive.google.com/drive/folders/17AecqojNwKaqQB2cHKXCWx6GERpwkGNM?usp=sharing'
-output = 'temp1'
+output = './Data/temp1'
 gdown.download(url, output, quiet=False) 
