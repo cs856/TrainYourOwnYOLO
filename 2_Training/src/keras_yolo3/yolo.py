@@ -228,6 +228,21 @@ class YOLO(object):
 def detect_video(yolo, video_path, output_path=""):
     import cv2
 
+
+    # Make a dataframe for the prediction outputs
+    out_df = pd.DataFrame(
+        columns=[
+            "frame",
+            "xmin",
+            "ymin",
+            "xmax",
+            "ymax",
+            "label",
+            "confidence",
+        ]
+    )
+
+
     vid = cv2.VideoCapture(video_path)
     if not vid.isOpened():
         raise IOError("Couldn't open webcam or video")
@@ -258,6 +273,30 @@ def detect_video(yolo, video_path, output_path=""):
         frame = frame[:, :, ::-1]
         image = Image.fromarray(frame)
         out_pred, image = yolo.detect_image(image, show_stats=False)
+
+
+        #create csv file for the video
+        for single_prediction in out_pred:
+            print([[frame_no] + single_prediction])
+            out_df = out_df.append(
+                pd.DataFrame(
+                    [
+                    [frame_no]
+                    + single_prediction
+                    ],
+                    columns=[
+                        "frame",
+                        "xmin",
+                        "ymin",
+                        "xmax",
+                        "ymax",
+                        "label",
+                        "confidence",
+                    ],
+                ), sort = False
+            )
+
+
         result = np.asarray(image)
         curr_time = timer()
         exec_time = curr_time - prev_time
@@ -286,6 +325,8 @@ def detect_video(yolo, video_path, output_path=""):
     vid.release()
     out.release()
     # yolo.close_session()
+
+    return out_df
 
 
 # TO PROCESS VIDEOS DIRECTLY FROM WEBCAM
