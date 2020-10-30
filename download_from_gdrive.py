@@ -13,5 +13,5 @@
 import gdown
 
 url = 'https://drive.google.com/drive/folders/17AecqojNwKaqQB2cHKXCWx6GERpwkGNM?usp=sharing'
-output = 'TrainYourOwnYOLO/Data'
+output = '/content/TrainYourOwnYOLO/Data'
 gdown.download(url, output, quiet=False) 
