@@ -266,6 +266,9 @@ def detect_video(yolo, video_path, output_path=""):
     curr_fps = 0
     fps = "FPS: ??"
     prev_time = timer()
+    
+    frame_no = 0
+
     while vid.isOpened():
         return_value, frame = vid.read()
         if not return_value:
