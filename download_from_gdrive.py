@@ -19,8 +19,13 @@ output = './Data/Model_Weights/data_classes.txt'
 gdown.download(url, output, quiet=False) 
 
 
-#download the trained final weights
-url = 'https://drive.google.com/uc?id=1TRjpUdYQd7RKfmHhm_1oB0u_WIAAs_LY'
+# #download the trained final weights - fullbody
+# url = 'https://drive.google.com/uc?id=1TRjpUdYQd7RKfmHhm_1oB0u_WIAAs_LY'
+# output = './Data/Model_Weights/trained_weights_final.h5'
+# gdown.download(url, output, quiet=False) 
+
+#download the trained final weights - uppper body
+url = 'https://drive.google.com/uc?id=1hXy_1_gBaQLiH9ef78Nhg1EB1MUq6I9x'
 output = './Data/Model_Weights/trained_weights_final.h5'
 gdown.download(url, output, quiet=False) 
 
