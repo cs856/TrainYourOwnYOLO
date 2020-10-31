@@ -171,7 +171,7 @@ if __name__ == "__main__":
 
     # Split images and videos
     img_endings = (".jpg", ".jpeg", ".png")
-    vid_endings = (".mp4", ".mpeg", ".mpg", ".avi")
+    vid_endings = (".mp4", ".mpeg", ".mpg", ".avi", ".mov")
 
     input_image_paths = []
     input_video_paths = []
