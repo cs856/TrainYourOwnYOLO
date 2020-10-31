@@ -4,13 +4,13 @@ import zipfile
 from google.colab import files
 
 #download test_vids.zip
-url = 'https://drive.google.com/uc?id=1trXuPUnzYFX5sXnagGtNDZ4jqUaj7xNv'
+url = 'https://drive.google.com/uc?id=19OVZj6qRr9ygzlZuLaEoLjX584LaYESi'
 output = 'test_vids.zip'
 gdown.download(url, output, quiet=False) 
 
 #extract test_vids.zip
 zip = zipfile.ZipFile("test_vids.zip")
-zip.extractall("./Data/Source_Images/Test_Images")
+zip.extractall("./Data/Source_Images")
 
 
 #download data_classes.txt
