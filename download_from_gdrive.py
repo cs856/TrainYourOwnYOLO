@@ -1,17 +1,30 @@
-# from google_drive_downloader import GoogleDriveDownloader as gdd
-
-# gdd.download_file_from_google_drive(file_id='1jGtYIExXrUq7YxZaeAhwtbbkpZrv5rrN',
-#                                     dest_path='./Data',
-#                                     unzip=True)
-
-#                                    # https://drive.google.com/file/d/1jGtYIExXrUq7YxZaeAhwtbbkpZrv5rrN/view?usp=sharing
-
-#                                    #https://drive.google.com/drive/folders/17AecqojNwKaqQB2cHKXCWx6GERpwkGNM?usp=sharing
-
-
 
 import gdown
+import zipfile
+from google.colab import files
 
-url = 'https://drive.google.com/uc?id=1jGtYIExXrUq7YxZaeAhwtbbkpZrv5rrN'
-output = 'temp1'
+#download test_vids.zip
+url = 'https://drive.google.com/uc?id=1trXuPUnzYFX5sXnagGtNDZ4jqUaj7xNv'
+output = 'test_vids.zip'
 gdown.download(url, output, quiet=False) 
+
+#extract test_vids.zip
+zip = zipfile.ZipFile("test_vids.zip")
+zip.extractall("./Data/Source_Images/Test_Images")
+
+
+#download data_classes.txt
+url = 'https://drive.google.com/uc?id=1G_GgucCbskWZq5umyMS8lVSe3692Ngkc'
+output = './Data/Model_Weights/data_classes.txt'
+gdown.download(url, output, quiet=False) 
+
+
+#download the trained final weights
+url = 'https://drive.google.com/uc?id=1TRjpUdYQd7RKfmHhm_1oB0u_WIAAs_LY'
+output = './Data/Model_Weights/trained_weights_final.h5'
+gdown.download(url, output, quiet=False) 
+
+
+
+# files.download('./Data/Model_Weights/data_classes.txt') 
+#files.download('requirements.txt') 
