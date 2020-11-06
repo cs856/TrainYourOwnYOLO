@@ -29,11 +29,11 @@ from google.colab import files
 
 #download test_vids.zip
 url = 'https://drive.google.com/uc?id=1eKsaPggGiPc3lVk7NAgp0t_RjkLNjISs'
-output = 'test_vids.zip'
+output = 'Test_Images.zip'
 gdown.download(url, output, quiet=False) 
 
 #extract test_vids.zip
-zip = zipfile.ZipFile("test_vids.zip")
+zip = zipfile.ZipFile("Test_Images.zip")
 zip.extractall("./Data/Source_Images")
 
 #download data_classes.txt
