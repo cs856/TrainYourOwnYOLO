@@ -23,3 +23,4 @@ gdown.download(url, output, quiet=False)
 url = 'https://drive.google.com/uc?id=1xCrb0r-edPccjNGzIaEH_Q-6del5OgPV'
 output = './Data/Model_Weights/trained_weights_final.h5'
 gdown.download(url, output, quiet=False) 
+
