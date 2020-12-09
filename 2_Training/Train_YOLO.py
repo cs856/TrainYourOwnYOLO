@@ -285,6 +285,7 @@ if __name__ == "__main__":
             initial_epoch=epoch1,
             callbacks=[logging, checkpoint, reduce_lr, early_stopping],
         )
+        
         #model.save_weights(os.path.join(log_dir, "trained_weights_final.h5"))
         model.save(os.path.join(log_dir, "trained_whole_model_final.h5"))
         step2_train_loss = history.history["loss"]
